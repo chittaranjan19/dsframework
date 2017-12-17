@@ -2,7 +2,7 @@ from policies.model.naiveBayes import *
 from policies.normalize.center import *
 from policies.test.trainTest import *
 from policies.preprocess.mean import *
-
+import pandas
 
 class Framework:
     def __init__(self, data, invalids = 0, preprocessPolicy=Mean(), normalizePolicy=Center(), modelPolicy=NaiveBayes(),testPolicy=TrainTest()):
@@ -35,3 +35,9 @@ class Framework:
         self.accuracy = self.testPolicy.test(self)
         return (self.model, self.accuracy)
         # we'll decide how to return info to the client later; there needs to be a way he can use the model
+
+if __name__ == "__main__":
+    data = pandas.read_csv("dataset.csv")
+    framework = Framework(data)
+    model, accuracy = framework.processData()
+    print(accuracy)
