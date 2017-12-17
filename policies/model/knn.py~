@@ -22,7 +22,6 @@ class KNN(Model):
             dist = self.distance(testInstance, self.trainingData[x])
             distances.append((self.trainingData[x], dist))
         distances.sort(key=lambda x:x[1])
-        neighbors = []
         for x in range(self.K):
             neighbors.append(distances[x][0])
         return 1 if sum(map(lambda val : val[-1],neighbors)) > self.K/2.0 else 0
