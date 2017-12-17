@@ -1,12 +1,11 @@
 from policies.model.naiveBayes import *
 from policies.normalize.center import *
-from policies.test.trainTestVal import *
+from policies.test.trainTest import *
 from policies.preprocess.mean import *
 
 
 class Framework:
-    def __init__(self, data, invalids = 0, preprocessPolicy=Mean(), normalizePolicy=Center(), modelPolicy=NaiveBayes(),
-                 testPolicy=TrainTestVal()):
+    def __init__(self, data, invalids = 0, preprocessPolicy=Mean(), normalizePolicy=Center(), modelPolicy=NaiveBayes(),testPolicy=TrainTest()):
         self.data = data
         self.preprocessPolicy = preprocessPolicy
         self.normalizePolicy = normalizePolicy
