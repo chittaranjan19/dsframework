@@ -3,5 +3,6 @@ class Testing:
     def __init__(self):
         pass
 
-    def test(self, data, res):
+    def test(self, frameworkObj):
         pass
+
