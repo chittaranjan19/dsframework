@@ -14,7 +14,7 @@ class Mode(PreProcess):
         # base functionality to fill in random values for each data field
         modeColumns = list(map(lambda x : max(set(x), key=x.count), zip(*frameworkObj.data)))
         for i in range(len(frameworkObj.data)):
-            for j in range(len(frameworkObj.data[0])):
+            for j in range(len(frameworkObj.data[0]) - 1):
                 if (frameworkObj.data[i][j] == frameworkObj.invalids[j]):
                     # it is invlalid, a random functionality.
                     data_new[i][j] = modeColumns[j]
