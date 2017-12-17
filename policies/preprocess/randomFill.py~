@@ -14,7 +14,7 @@ class Random(PreProcess):
         minColumns = self.findMinOfColumns(frameworkObj.data)
         maxColumns = self.findMaxOfColumns(frameworkObj.data)
         for i in range(len(frameworkObj.data)):
-            for j in range(len(frameworkObj.data[0]) - 1):
+            for j in range(len(frameworkObj.data[0])):
                 if(frameworkObj.data[i][j] == frameworkObj.invalids[j]):
                     #it is invlalid, a random functionality.
                     data_new[i][j] = random.randint(minColumns[j], maxColumns[j])

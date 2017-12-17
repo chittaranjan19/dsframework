@@ -33,15 +33,16 @@ class NaiveBayes(Model):
 		for i in range(len(data)):
 			for j in range(len(data[0]) - 1):
 				for key in self.probs:
-					print(key,self.probs[key])
-					if key[0] == j and data[i][j] > key[1] and data[i][j] < key[2] and data[i][-1] == key[-1]:
-						self.probs[key] += 1
+					if key not in [0,1]:
+						#print(key,self.probs[key])
+						if key[0] == j and data[i][j] > key[1] and data[i][j] < key[2] and data[i][-1] == key[-1]:
+							self.probs[key] += 1
 		
 				self.probs[data[i][-1]] += 1		
-		self.probs["prob1"] = self.probs[0]/len(self.data)
-		self.probs["prob0"] = self.probs[1]/len(self.data)
+		self.probs["prob1"] = self.probs[0]/len(data)
+		self.probs["prob0"] = self.probs[1]/len(data)
 		
-		for key in probs:
+		for key in self.probs:
 			if key not in [0,1,"prob0","prob1"]:
 				self.probs[key] = (self.probs[key] + 1)/ self.probs[key[-1]] + INTERVALS				
 		

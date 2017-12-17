@@ -13,11 +13,11 @@ class Random(PreProcess):
         #base functionality to fill in random values for each data field
         minColumns = self.findMinOfColumns(frameworkObj.data)
         maxColumns = self.findMaxOfColumns(frameworkObj.data)
-        for i in range(len(frameworkObj.data)):
-            for j in range(len(frameworkObj.data[0]) - 1):
+        for i in len(frameworkObj.data):
+            for j in len(frameworkObj.data[0]):
                 if(frameworkObj.data[i][j] == frameworkObj.invalids[j]):
                     #it is invlalid, a random functionality.
-                    data_new[i][j] = random.randint(minColumns[j], maxColumns[j])
+                    data_new[i][j] = random.randint(minColumns[j],maxColumns[j])
                 else:
                     data_new[i][j] = frameworkObj.data[i][j]
 
