@@ -30,7 +30,7 @@ class Framework:
 
 	def processData(self):
 		# self.data includes both training and test data, including test data, parameters a little hazy, should decide on the design.
-		self.data = self.preprocessPolicy.preProcess(self)  # <- this 'self' being passed should be second param in each of the policies. Use .data to access and transform the data in-place.
+		self.preprocessPolicy.preProcess(self)  # <- this 'self' being passed should be second param in each of the policies. Use .data to access and transform the data in-place.
 		self.normalizePolicy.normalize(self)
 		self.model = self.modelPolicy.build(self)
 		self.accuracy = self.testPolicy.test(self)

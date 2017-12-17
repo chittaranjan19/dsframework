@@ -29,10 +29,11 @@ class NaiveBayes(Model):
 				self.probs[(i,(diff/INTERVALS) + (j-1)*INTERVALS,(diff/INTERVALS) + (j)*INTERVALS, 1 )] = 0
 		self.probs[1] = 0
 		self.probs[0] = 0
-		
+
 		for i in range(len(data)):
-			for j in range(len(data[0] - 1)):
+			for j in range(len(data[0]) - 1):
 				for key in self.probs:
+					print(key,self.probs[key])
 					if key[0] == j and data[i][j] > key[1] and data[i][j] < key[2] and data[i][-1] == key[-1]:
 						self.probs[key] += 1
 		
