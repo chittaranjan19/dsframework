@@ -17,12 +17,12 @@ class Center(Normalize):
 		stdDevs = [0] * len(frameworkObj.data[0])
 		
 		for i in range(len(frameworkObj.data)):
-			for j in range(len(frameworkObj.data[0])):
+			for j in range(len(frameworkObj.data[0]) - 1):
 				stdDevs += (frameworkObj.data[i][j] - means[j])**2
 		
 		stdDevs = list(map(lambda x : (x/(numRows-1))**0.5, stdDevs))
 
 		for i in range(len(frameworkObj.data)):
-			for j in range(len(frameworkObj.data[0])):
+			for j in range(len(frameworkObj.data[0]) - 1):
 				frameworkObj.data[i][j] = (frameworkObj.data[i][j] - means[j])/stdDevs[j]
 

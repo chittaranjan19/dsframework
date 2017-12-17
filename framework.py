@@ -31,7 +31,7 @@ class Framework:
         # self.data includes both training and test data, including test data, parameters a little hazy, should decide on the design.
         self.data = self.preprocessPolicy.preProcess(self)  # <- this 'self' being passed should be second param in each of the policies. Use .data to access and transform the data in-place.
         self.normalizePolicy.normalize(self)
-        self.modelPolicy.classify(self)
-        self.testPolicy.test(self)
-
+        self.model = self.modelPolicy.build(self)
+        self.accuracy = self.testPolicy.test(self)
+        return (self.model, self.accuracy)
         # we'll decide how to return info to the client later; there needs to be a way he can use the model
