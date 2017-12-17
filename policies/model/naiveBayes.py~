@@ -36,11 +36,11 @@ class NaiveBayes(Model):
 						probs[key] += 1
 		
 				self.probs[data[i][-1]] += 1		
-		self.probs["prob1"] = self.probs[0]/len(self.data)
-		self.probs["prob0"] = self.probs[1]/len(self.data)
+		self.probs[0] = self.probs/len(self.data)
+		self.probs[1] = self.probs/len(self.data)
 		
 		for key in probs:
-			if key not in [0,1,"prob0","prob1"]:
+			if key not in [0,1]:
 				self.probs[key] = (self.probs[key] + 1)/ self.probs[key[-1]] + INTERVALS				
 		
 		return self
@@ -50,11 +50,9 @@ class NaiveBayes(Model):
 			try:
 				neg = neg * self.probs[(i, query[i]//self.INTERVALS, query[i]//self.INTERVALS + self.INTERVALS,0)]
 			except:
-				neg = neg * 1/(self.probs[0] + self.INTERVALS)
+				neg = neg * 1/(self.probs["total"])
 			try:
 				pos = pos * self.probs[(i, query[i]//self.INTERVALS, query[i]//self.INTERVALS + self.INTERVALS,1)]
 			except:
-				pos = pos * 1/(self.probs[1] + self.INTERVALS)
-		pos *= self.probs["prob1"]
-		neg *= self.probs["prob0"]
-		return 1 if pos >= neg else 0
+				pass
+		return 1 if pos >= neg else 0			
