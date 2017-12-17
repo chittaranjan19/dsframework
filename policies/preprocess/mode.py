@@ -1,10 +1,10 @@
-from policies.preprocess.preprocess import *
+from policies.preprocess.random import *
 
 
 class Mode(PreProcess):
 
     def __init__(self):
-        PreProcess.__init__()
+        PreProcess.__init__(self)
 
     def preProcess(self, frameworkObj):
         if (len(frameworkObj.invalids) == 1):
@@ -21,4 +21,4 @@ class Mode(PreProcess):
                 else:
                     data_new[i][j] = frameworkObj.data[i][j]
 
-        return data_new
+        frameworkObj.data = data_new

@@ -2,7 +2,7 @@ from policies.normalize.normalize import *
 
 class Center(Normalize):
 	def __init__(self):
-		Normalize.__init__()
+		Normalize.__init__(self)
 	
 
 	def normalize(self, frameworkObj):
