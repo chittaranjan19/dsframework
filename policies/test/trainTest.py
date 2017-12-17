@@ -4,7 +4,7 @@ from random import shuffle
 
 class TrainTest(Testing):
     def __init__(self):
-        Testing.__init__()
+        Testing.__init__(self)
 
     def test(self, frameworkObj):
         #randomise data

@@ -5,8 +5,9 @@ from policies.preprocess.mean import *
 import pandas
 
 class Framework:
-    def __init__(self, data, invalids = 0, preprocessPolicy=Mean(), normalizePolicy=Center(), modelPolicy=NaiveBayes(),testPolicy=TrainTest()):
+    def __init__(self, data, invalids=(0,), preprocessPolicy=Mean(), normalizePolicy=Center(), modelPolicy=NaiveBayes(),testPolicy=TrainTest()):
         self.data = data
+        self.invalids = list(invalids)
         self.preprocessPolicy = preprocessPolicy
         self.normalizePolicy = normalizePolicy
         self.modelPolicy = modelPolicy

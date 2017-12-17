@@ -4,7 +4,7 @@ import math
 
 class KNN(Model):
     def __init__(self, k, data):
-        Model.__init__()
+        Model.__init__(self)
         self.K = k
         self.trainingData = data
 

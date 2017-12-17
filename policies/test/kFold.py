@@ -4,7 +4,7 @@ from random import shuffle
 
 class KFold(Testing):
     def __init__(self, K=10):
-        Testing.__init__()
+        Testing.__init__(self)
         self.K = K
 
     def test(self, frameworkObj):
