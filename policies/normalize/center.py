@@ -11,7 +11,7 @@ class Center(Normalize):
 		for row in frameworkObj.data:
 			for val in enumerate(row):
 				means[val[0]] += val[1]
-		numRows = len(data)
+		numRows = len(frameworkObj.data)
 		means = list(map(lambda x : x/numRows,means))
 
 		stdDevs = [0] * len(frameworkObj.data[0])
