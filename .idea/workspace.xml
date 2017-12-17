@@ -2,15 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="457958cc-96d0-46fd-9696-a2d123d69772" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/policies/test/trainTest.py" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/policies/test/trainTestVal.py" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/framework.py" afterPath="$PROJECT_DIR$/framework.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/policies/normalize/center.py" afterPath="$PROJECT_DIR$/policies/normalize/center.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/policies/normalize/normalize.py" afterPath="$PROJECT_DIR$/policies/normalize/normalize.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/policies/preprocess/mean.py" afterPath="$PROJECT_DIR$/policies/preprocess/mean.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/policies/preprocess/mode.py" afterPath="$PROJECT_DIR$/policies/preprocess/mode.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/policies/preprocess/preprocess.py" afterPath="$PROJECT_DIR$/policies/preprocess/preprocess.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/policies/test/testing.py" afterPath="$PROJECT_DIR$/policies/test/testing.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/policies/test/trainTestVal.py" afterPath="$PROJECT_DIR$/policies/test/trainTestVal.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/policies/test/kFold.py" afterPath="$PROJECT_DIR$/policies/test/kFold.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -85,11 +81,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="trainTestVal.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/policies/test/trainTestVal.py">
+      <file leaf-file-name="trainTest.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/policies/test/trainTest.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="11" column="123" lean-forward="false" selection-start-line="11" selection-start-column="123" selection-end-line="11" selection-end-column="123" />
+            <state relative-caret-position="414">
+              <caret line="23" column="0" lean-forward="true" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
               <folding>
                 <element signature="e#0#35#0" expanded="true" />
               </folding>
@@ -97,24 +93,26 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="framework.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/framework.py">
+      <file leaf-file-name="kFold.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/policies/test/kFold.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="252">
-              <caret line="14" column="0" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+            <state relative-caret-position="504">
+              <caret line="28" column="43" lean-forward="false" selection-start-line="28" selection-start-column="43" selection-end-line="28" selection-end-column="43" />
               <folding>
-                <element signature="e#0#39#0" expanded="true" />
+                <element signature="e#0#35#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="naiveBayes.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/policies/model/naiveBayes.py">
+      <file leaf-file-name="framework.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/framework.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="-41">
+              <caret line="7" column="119" lean-forward="false" selection-start-line="7" selection-start-column="119" selection-end-line="7" selection-end-column="119" />
+              <folding>
+                <element signature="e#0#39#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -156,12 +154,14 @@
         <option value="$PROJECT_DIR$/policies/normalize/normalize.py" />
         <option value="$PROJECT_DIR$/policies/model/model.py" />
         <option value="$PROJECT_DIR$/policies/normalize/center.py" />
-        <option value="$PROJECT_DIR$/framework.py" />
         <option value="$PROJECT_DIR$/policies/preprocess/preprocess.py" />
         <option value="$PROJECT_DIR$/policies/preprocess/mode.py" />
         <option value="$PROJECT_DIR$/policies/preprocess/mean.py" />
         <option value="$PROJECT_DIR$/policies/test/testing.py" />
         <option value="$PROJECT_DIR$/policies/test/trainTestVal.py" />
+        <option value="$PROJECT_DIR$/policies/test/trainTest.py" />
+        <option value="$PROJECT_DIR$/policies/test/kFold.py" />
+        <option value="$PROJECT_DIR$/framework.py" />
       </list>
     </option>
   </component>
@@ -544,7 +544,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/policies/test/trainTestVal.py">
+    <entry file="file://$PROJECT_DIR$/policies/test/trainTest.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -628,7 +628,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/policies/test/trainTestVal.py">
+    <entry file="file://$PROJECT_DIR$/policies/test/trainTest.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -712,7 +712,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/policies/test/trainTestVal.py">
+    <entry file="file://$PROJECT_DIR$/policies/test/trainTest.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -796,7 +796,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/policies/test/trainTestVal.py">
+    <entry file="file://$PROJECT_DIR$/policies/test/trainTest.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -852,14 +852,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="72">
           <caret line="4" column="13" lean-forward="false" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/policies/test/kFold.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -920,6 +912,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/framework.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-41">
+          <caret line="7" column="119" lean-forward="false" selection-start-line="7" selection-start-column="119" selection-end-line="7" selection-end-column="119" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/policies/test/testing.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
@@ -928,22 +930,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/policies/test/trainTestVal.py">
+    <entry file="file://$PROJECT_DIR$/policies/test/kFold.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="11" column="123" lean-forward="false" selection-start-line="11" selection-start-column="123" selection-end-line="11" selection-end-column="123" />
+        <state relative-caret-position="504">
+          <caret line="28" column="43" lean-forward="false" selection-start-line="28" selection-start-column="43" selection-end-line="28" selection-end-column="43" />
           <folding>
             <element signature="e#0#35#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/framework.py">
+    <entry file="file://$PROJECT_DIR$/policies/test/trainTest.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="14" column="0" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+        <state relative-caret-position="414">
+          <caret line="23" column="0" lean-forward="true" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
           <folding>
-            <element signature="e#0#39#0" expanded="true" />
+            <element signature="e#0#35#0" expanded="true" />
           </folding>
         </state>
       </provider>
