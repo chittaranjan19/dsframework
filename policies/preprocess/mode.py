@@ -1,5 +1,5 @@
-from policies.preprocess.randomFill import *
-
+from policies.preprocess.preprocess import *
+import copy
 
 class Mode(PreProcess):
 
