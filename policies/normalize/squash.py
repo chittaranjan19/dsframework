@@ -1,6 +1,6 @@
 from policies.normalize.normalize import *
 
-class Center(Normalize):
+class Squash(Normalize):
 	def __init__(self):
 		Normalize.__init__()
 	
