@@ -8,6 +8,9 @@ class KNN(Model):
         self.K = k
         self.trainingData = data
 
+    def setData(self,data):
+        self.data = data
+
     def classify(self, testInstance):
         distances = []
         length = len(testInstance) - 1
