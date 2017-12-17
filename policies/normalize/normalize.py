@@ -1,5 +1,5 @@
 #base class for normalize
-import copy
+
 class Normalize:
     def __init__(self):
         pass
