@@ -1,7 +1,7 @@
 from policies.preprocess.preprocess import *
 
 
-class Mean(PreProcess):
+class Mode(PreProcess):
 
     def __init__(self):
         PreProcess.__init__()
@@ -12,7 +12,7 @@ class Mean(PreProcess):
         data_new = copy.deepcopy(data)
         # assume data is just either training or test or val; but this should not know that
         # base functionality to fill in random values for each data field
-        avgColumns = list(map(lambda column: sum(column)/len(column), zip(*data)))
+        modeColumns = list(map(lambda x : max(set(x), key=x.count), zip(*data)))
         for i in len(data):
             for j in len(data[0]):
                 if (data[i][j] == invalids[j]):
