@@ -1,33 +1,35 @@
-from policies.model.model import *
-from policies.normalize.normalize import *
-from policies.test.testing import *
-from policies.preprocess.preprocess import *
+from policies.model.NaiveBayes import *
+from policies.normalize.Center import *
+from policies.test.TrainTestVal import *
+from policies.preprocess.Mean import *
 
 
 class Framework:
-    def __init__(self, data, preprocesspobj=PreProcess(), normalizepobj=Normalize(), modelpobj=Model(), testpobj=Testing()):
-        self.preProcesPObj = preprocesspobj
-        self.normalizePObj = normalizepobj
-        self.modelPObj = modelpobj
-        self.testPObj = testpobj
+    def __init__(self, data, preprocessPolicy=Mean(), normalizePolicy=Center(), modelPolicy=NaiveBayes(), testPolicy=TrainTestVal()):
         self.data = data
+        self.preprocessPolicy = preprocessPolicy.setData(data)
+        self.normalizePolicy = normalizePolicy.setData(data)
+        self.modelPolicy = modelPolicy.setData(data)
+        self.testPolicy = testPolicy.setData(data)
 
-    def setPreProcecssObj(self,preprocessPObj):
-        self.preProcesPObj = preprocessPObj
+    def setPreprocessPolicy(self,preprocessPolicy):
+        self.preprocessPolicy = preprocessPolicy.setData(self.data)
 
-    def setNormalizePObj(self,normalizePObj):
-        self.normalizePObj = normalizePObj
+    def setNormalizePolicy(self,normalizePolicy):
+        self.normalizePolicy = normalizePolicy.setData(self.data)
 
-    def setModelPObj(self, modelPObj):
-        self.modelPObj = modelPObj
+    def setModelPolicy(self, modelPolicy):
+        self.modelPolicy = modelPolicy.setData(self.data)
 
-    def setTestingPObj(self,testPObj):
-        self.testPObj = testPObj
+    def setTestingPolicy(self,testPolicy):
+        self.testPolicy = testPolicy.setData(self.data)
 
 
     def processData(self):
         #self.data includes both training and test data, including test data, parameters a little hazy, should decide on the design.
-        data = self.preProcesPObj.preProcess(self.data)
-        data = self.normalizePObj.normalize(data)
-        res = self.modelPObj.classify(data)
-        return self.testPObj.test(data, res)
+        self.preprocessPolicy.preProcess()
+        self.normalizePolicy.normalize()
+        self.modelPolicy.classify()
+        self.testPolicy.test()
+        
+        #we'll decide how to return info to the client later; there needs to be a way he can use the model
