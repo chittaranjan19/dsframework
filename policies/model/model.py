@@ -7,3 +7,6 @@ class Model:
         # use frameworkObj.data if isTest == False
         # test can call build with isTest = True, and pass a list of lists as second parameter
         pass
+
+    def classify(self, query):
+        pass
