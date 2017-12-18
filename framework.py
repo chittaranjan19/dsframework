@@ -1,4 +1,5 @@
 from policies.model.knn import *
+from policies.model.naiveBayes import *
 from policies.normalize.center import *
 from policies.test.trainTest import *
 from policies.preprocess.mean import *
@@ -6,7 +7,7 @@ from policies.test.kFold import *
 import csv
 
 class Framework:
-	def __init__(self, data, invalids=(0,), preprocessPolicy=Mean(), normalizePolicy=Center(), modelPolicy=KNN(),testPolicy=KFold()):
+	def __init__(self, data, invalids=(0,), preprocessPolicy=Mean(), normalizePolicy=Center(), modelPolicy=NaiveBayes(),testPolicy=TrainTest()):
 		self.data = data
 		self.invalids = list(invalids)
 		self.preprocessPolicy = preprocessPolicy
@@ -36,12 +37,11 @@ class Framework:
 		self.model = self.modelPolicy.build(self)
 		self.accuracy = self.testPolicy.test(self)
 		return (self.model, self.accuracy)
-		# we'll decide how to return info to the client later; there needs to be a way he can use the model
 
 if __name__ == "__main__":
 	with open("dataset.csv", 'rU') as f:
 		reader = csv.reader(f)
 		data = list(list(map(float, rec)) for rec in csv.reader(f, delimiter=','))  # reads csv into a list of lists
-	framework = Framework(data)
+	framework = Framework(data, invalids = ["nan",0,0,0,0,0,"nan","nan","nan"])
 	model, accuracy = framework.processData()
 	print(accuracy)

@@ -19,5 +19,5 @@ class TrainTest(Testing):
             if(output == instance[-1]):
                 numCorrect +=1
         percAccuracy = (numCorrect/float(len(test_data)))*100
-        return modeledObj, percAccuracy
+        return percAccuracy
 
