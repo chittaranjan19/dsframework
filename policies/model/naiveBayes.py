@@ -12,7 +12,7 @@ class NaiveBayes(Model):
 			data = frameworkObj.data
 		
 		self.probs = dict()
-		INTERVALS = 10
+		INTERVALS = 50
 		self.INTERVALS = INTERVALS
 		mins = data[0]
 		maxs = data[0]
@@ -49,7 +49,6 @@ class NaiveBayes(Model):
 	def classify(self, query):
 		pos = self.probs["prob1"]; neg = self.probs["prob0"]
 		for i in range(len(query)):
-			print(pos,neg)
 			try:
 				
 				neg = neg * self.probs[(i, (query[i]//self.INTERVALS)*self.INTERVALS, (query[i]//self.INTERVALS)*self.INTERVALS + self.INTERVALS,0)]
